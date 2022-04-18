@@ -12,13 +12,19 @@
         body {
             margin: 2%;
         }
+        .outline {
+            border: 1px solid black;
+            padding: 0 10px;
+        }
     </style>
 </head>
 <body>
 <h1 style="color: darkblue">TeachMeSkills Blog:</h1>
 {% for topic in topics %}
+    <div class="outline">
     <h2 style="color: maroon">{{ topic.name }}</h2>
-    <a style="color: black" href="{% url 'posts' pk=topic.id %}">{{ topic.title }}</a>
+        <a style="color: black" href="{% url 'posts' pk=topic.id %}">{{ topic.title }}</a></div>
+    <br>
 {% endfor %}
 <br>
 <br>

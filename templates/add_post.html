@@ -15,11 +15,18 @@
     </style>
 </head>
 <body>
+
 <h1 style="color: darkblue">Add new Post:</h1>
 <form method="POST">
     {% csrf_token %}
     {{ form.as_p }}
-    <button class="btn btn-secondary">Add</button>
+    <button class="btn btn-light">Add</button>
+    <br>
+<button class="btn btn-light">
+
+    <a href="http://127.0.0.1:8000/">Back</a>
+
+</button>
 </form>
 
 </body>

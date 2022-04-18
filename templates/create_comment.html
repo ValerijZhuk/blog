@@ -15,12 +15,13 @@
     </style>
 </head>
 <body>
-<h1 style="color: darkblue">Create new topic:</h1>
+<h1 style="color: darkblue">Create new comment:</h1>
 <form method="POST">
     {% csrf_token %}
     {{ form.as_p }}
-    <button class="btn btn-secondary">Create</button>
+    <button class="btn btn-secondary">Create Comment</button>
 <br>
+
 <button class="btn btn-light">
     <a href="http://127.0.0.1:8000/">Back</a>
 </button>
