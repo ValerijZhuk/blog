@@ -26,6 +26,9 @@
     <div class="outline">
         <a href="{% url 'post_detail' post.id %}" class="element-name">{{ post.name }}</a><br>
         <b>{{ post.text }}</b>
+        <div class="element-name">
+            {{ post.times_of_edit }}
+        </div>
         <h5>Likes: {{ post.likes_count }}</h5>
         <form action="{% url 'like_post' topic_id %}" method="POST">
             {% csrf_token %}

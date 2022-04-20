@@ -54,5 +54,5 @@ class PostDetailView(DetailView):
 class CreateCommentView(CreateView):
     model = Comment
     template_name = 'create_comment.html'
-    fields = '__all__'
+    fields = 'post', 'text', 'rating'
     # form_class = CreateCommentForm
