@@ -1,3 +1,4 @@
+from ckeditor.fields import RichTextField
 from django.db import models
 from django.urls import reverse
 
@@ -28,6 +29,7 @@ class Post(models.Model):
     name = models.CharField(max_length=255)
     likes_count = models.IntegerField(default=0)
     times_of_edit = models.IntegerField(default=0)
+    beauty_content = RichTextField(blank=True, null=True)
 
     def __str__(self):
         return f"{self.name}-{self.id}"
@@ -54,17 +56,3 @@ class Comment(AbstractComment):
 
     def get_absolute_url(self):
         return reverse('topics', args='')
-
-
-class AbstractUser(models.Model):
-    email = models.EmailField(unique=True)
-    first_name = models.CharField(max_length=30, blank=True)
-    last_name = models.CharField(max_length=30, blank=True)
-    date_joined = models.DateTimeField(auto_now_add=True)
-
-    class Meta:
-        abstract = True
-
-
-class User(AbstractUser):
-    pass

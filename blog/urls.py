@@ -12,4 +12,7 @@ urlpatterns += [
     path('like-post/<int:pk>/', views.like_view, name='like_post'),
     path('post/<int:pk>/', views.PostDetailView.as_view(), name='post_detail'),
     path('post/<int:pk>/create_comment', CreateCommentView.as_view(), name='create_comment'),
+    path("register", views.register_request, name="register"),
+    path("login", views.login_request, name="login"),
+    path("logout", views.logout_request, name="logout"),
 ]
